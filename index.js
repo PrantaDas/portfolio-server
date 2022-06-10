@@ -10,7 +10,7 @@ app.use(cors());
 
 
 
-const uri = "mongodb+srv://my-portfolio:oaOt7W0UzuWoOF14@cluster0.hugt6.mongodb.net/?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.hugt6.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 async function run() {
     try {
